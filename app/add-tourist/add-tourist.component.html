@@ -1,0 +1,54 @@
+<div class = "pageContainer">
+	<div class="page-title">
+		<div class="page-title-text">
+			Добавить туриста
+		</div>
+		<div class="page-title-desc">
+			Заполните поля
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="flex-row input-row row">
+			<input type="text" placeholder="Имя" [(ngModel)]="tourist.name">
+			<input type="text" placeholder="Фамилия" [(ngModel)]="tourist.surName">
+			<input type="text" placeholder="Отчество" [(ngModel)]="tourist.middleName">
+		</div>
+
+		<div class="flex-row input-row row">
+			<input type="text" matInput placeholder="Дата рождения" [(ngModel)]="tourist.birthday">
+			<input type="text" placeholder="Телефон" [(ngModel)]="tourist.phone">
+			<input type="email" placeholder="Email" [(ngModel)]="tourist.email">
+		</div>
+
+		<div class="flex-row input-row row">
+			<textarea rows = "7" placeholder="Заметка" [(ngModel)]="tourist.hint"></textarea>
+		</div>
+
+		<div *ngIf="uploadResponse && uploadResponse.status === 'error'" class = "error-message">Ошибка при загрузке файла: Вероятно, вы загружаете файл <strong>НЕ</strong> в формате png/jpg/jpeg или svg, либо размером больше 3МБ</div>
+		<div *ngIf="uploadResponse && uploadResponse.status != 'error'" class = "success-message">Изображение успешно загружено</div>
+
+		  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+		  <div class="avatar-upload flex-col ai-center jc-center" (click) = "simulateUpload()">
+		  	<div class="upload-icon" [inlineSVG]="'common/upload.svg'"></div>
+		  	<div class="upload-text">
+		  		Фото. Перетащите файл сюда, либо кликните для загрузки
+		  	</div>
+		  </div>
+    		<input id ="avatar-input" [hidden] = "true" type="file" name="avatar" (change)="onFileSelect($event)" />
+   		 	<button type="submit" [hidden] = "true" id = "uploadAvatar">Upload</button>
+
+  		</form>
+
+  		<div class="flex-row buttons-holder">
+  			<div class="button-default button-cta" (click)="submitForm()">
+  				Отправить
+  			</div>
+
+  			<div class="button-default button-cancel" (click)="clearForm()">
+  				Очистить
+  			</div>
+  		</div>
+	</div>
+</div>

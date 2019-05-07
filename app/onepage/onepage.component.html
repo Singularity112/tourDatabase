@@ -1,0 +1,53 @@
+<header class = "flex-row">
+	<div class="sidebar">
+		<div class="logo">
+			<a routerLink="/dashboard"><img src="assets/img-header/logo.png"></a>
+		</div>
+	</div>
+
+	<div class="content flex-row ai-center">
+		<div class="search">
+			<div class="search-icon" [inlineSVG]="'img-header/search.svg'"></div>
+			<input type="text" name="search" placeholder="Поиск">
+		</div>
+
+		<div class="header-user ml-auto flex-row ai-center">
+			<div class="notification">
+				<div class="notification-icon" [inlineSVG]="'img-header/notification.svg'"></div>
+				<div class="notification-round" [hidden] = "!isNotification"></div>
+			</div>
+			<div class="header-profile flex-row ai-center">
+				<img src="assets/img-header/profile.jpg">
+				<span>{{username}}</span>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="flex-row">
+	<div class="sidebar main-sidebar">
+		<a routerLink = "/dashboard" routerLinkActive="active">
+			<div class="dashboard-icon" [inlineSVG]="'img-sidebar/dashboard.svg'"></div>
+			<span>Главная</span>
+		</a>
+
+		<a routerLink = "/tourists" routerLinkActive="active">
+			<div class="dashboard-icon" [inlineSVG]="'common/tourists.svg'"></div>
+			<span>Туристы</span>
+		</a>
+
+		<a routerLink = "/search" routerLinkActive="active">
+			<div class="dashboard-icon" [inlineSVG]="'img-sidebar/search.svg'"></div>
+			<span>Поиск</span>
+		</a>
+
+		<a routerLink = "/add" routerLinkActive="active">
+			<div class="dashboard-icon" [inlineSVG]="'img-sidebar/add.svg'"></div>
+			<span>Добавить туриста</span>
+		</a>
+	</div>
+
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

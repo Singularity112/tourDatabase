@@ -1,0 +1,142 @@
+@import '../../variables.scss';
+
+.sidebar{
+	width: 260px;
+}
+
+.content{
+	width: 1140px;
+}
+
+header{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.search{
+	
+	position: relative;
+
+	input{
+		width: 400px;
+		background: $gray-light;
+		padding: 13px 20px;
+		border-radius: 20px;
+		border: none;
+		font-size: $text-small;
+		font-family: 'Montserrat', sans-serif;
+		outline: none;
+
+		&:placeholder{
+			color: $gray;
+		}
+	}
+
+	.search-icon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 25px;
+	}
+}
+
+
+.notification{
+
+	position: relative;
+
+	.notification-round{
+		width: 8px;
+		height: 8px;
+		background-color: red;
+		border-radius: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.notification-icon{
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.header-profile{
+	margin-left: 30px;
+	cursor: pointer;
+
+	img{
+		width: 44px;
+		height: 44px;
+		border-radius: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	span{
+		color: $gray-dark;
+		font-size: $text-small;
+		margin-left: 15px;
+		font-weight: $font-medium;
+	}
+}
+
+.logo{
+	width: 200px;
+
+	img{
+		width: 100%;
+	}
+}
+
+.main-sidebar{
+	padding-top: 15px;
+	font-size: $text-small;
+
+	a{
+		padding-left: 35px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		margin-bottom: 5px;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		color: $gray-dark;
+		position: relative;
+		transition-duration: 0.2s;
+
+		&:before{
+			position: absolute;
+			content: '';
+			width: 6px;
+			border-radius: 10px;
+			height: 0;
+			left: 0;
+			top: 0;
+			background: $blue;
+			transition-duration: 0.2s;
+		}
+
+		&.active:before{
+			height: 100%;
+		}
+
+		&:not(.active):hover{
+			background: $gray-light;
+		}
+
+		span{
+			margin-left: 15px;
+		}
+
+		&.active{
+			color: $blue;
+		}
+	}
+}

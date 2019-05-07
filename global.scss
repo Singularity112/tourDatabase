@@ -1,0 +1,272 @@
+@import 'variables.scss';
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: $text-regular;
+	font-weight: $font-regular;
+	background-color: $gray-thin;
+}
+
+.font-light{
+	font-weight: $font-light;
+}
+
+.font-regular{
+	font-weight: $font-regular;
+}
+
+.font-medium{
+	font-weight: $font-medium;
+}
+
+.font-bold{
+	font-weight: $font-bold;
+}
+
+.text-small{
+	font-size: $text-small;
+}
+
+.text-regular{
+	font-size: $text-regular;
+}
+
+.text-medium{
+	font-size: $text-medium
+}
+
+.text-big{
+	font-size: $text-big
+}
+
+.container-fluid{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1920px;
+}
+
+.container{
+	width: 90%;
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.flex-col{
+	flex-direction: column;
+	display: flex;
+}
+
+.flex-row{
+	flex-direction: row;
+	display: flex;
+}
+
+.ai-center{
+	align-items: center;
+}
+
+.ml-auto{
+	margin-left: auto;
+}
+
+.search-icon{
+	svg{
+		width: $svg-size;
+		height: $svg-size;
+		transform: rotate(90deg);
+
+		path{
+			fill: $gray;
+		}
+	}
+}
+
+.notification-icon{
+	svg{
+		width: $svg-size;
+		height: $svg-size;
+
+		path{
+			fill: $gray;
+		}
+	}
+}
+
+a{
+	text-decoration: none;
+}
+
+#application-screen{
+	height: 100vh;
+}
+
+.main-sidebar{
+	svg{
+		width: $svg-size;
+		height: $svg-size;
+
+		path{
+			fill: $gray ;
+		}
+	}
+
+	a.active{
+		path{
+			fill: $blue;
+		}
+	}
+}
+
+.button{
+	background: $blue;
+	color: $white;
+	padding: 15px 30px;
+	font-size: $text-small;
+	cursor: pointer;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: $font-medium;
+}
+
+.pageContainer{
+	background: $white;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	padding: 40px;
+
+	.page-title{
+		position: relative;
+		padding-top: 5px;
+		padding-bottom: 5px;
+
+		&:before{
+			position: absolute;
+			content: '';
+			width: 6px;
+			border-radius: 10px;
+			height: 100%;
+			left: -40px;
+			top: 0;
+			background: $blue;
+		}
+
+		.page-title-text{
+			font-size: $text-regular;
+			font-weight: $font-bold;
+			color: $blue;
+		}
+
+		.page-title-desc{
+			font-size: $text-small;
+			font-weight: $font-medium;
+			color: $gray;
+			margin-top: 5px;
+		}
+	}
+
+	input, textarea{
+		padding: 13px 20px;
+		border-radius: 20px;
+		border: 2px solid $gray-light;
+		font-size: $text-small;
+		font-family: 'Montserrat', sans-serif;
+		outline: none;
+
+		&:placeholder{
+			color: $gray;
+		}
+	}
+
+	.avatar-upload{
+		border-radius: 20px;
+		width: 100%;
+		height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $gray-thin;
+		border: 1px dashed $gray;
+		box-sizing: border-box;
+		cursor: pointer;
+
+		&:hover svg{
+			transform: scale(1.2);
+		}
+
+		.upload-icon{
+			svg{
+			width: 40px;
+			height: 40px;
+			transition-duration: 0.2s;
+
+			path{
+				fill: $gray;
+			}
+	}
+		}
+	}
+
+	.row{
+		margin-bottom: 20px;
+	}
+}
+
+.input-row{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 20px;
+}
+
+.error-message{
+	color: red;
+	font-size: $text-small;
+	margin-bottom: 20px;
+}
+
+.success-message{
+	color: green;
+	font-size: $text-small;
+	margin-bottom: 20px;
+}
+
+.button-default{
+	border-radius: 25px;
+	padding: 15px 25px;
+	font-size: $text-small;
+	font-weight: $font-bold;
+	cursor: pointer;
+	transition-duration: 0.2s;
+
+	&.button-cancel{
+		background-color: $white;
+		color: $gray;
+		border: 1px solid $gray;
+
+		&:hover{
+			background-color: $gray;
+			color: $white;
+		}
+	}
+
+	&.button-cta{
+		background-color: $blue;
+		border: 2px solid $blue;
+		color: $white;
+
+		&:hover{
+			background-color: $white;
+			color: $blue;
+		}
+	}
+
+}
+
+
+

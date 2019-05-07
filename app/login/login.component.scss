@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.login-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+input{
+	width: 400px;
+	background: $gray-light;
+	padding: 13px 20px;
+	border-radius: 20px;
+	border: none;
+	font-size: $text-small;
+	font-family: 'Montserrat', sans-serif;
+	outline: none;
+
+	&:placeholder{
+		color: $gray;
+	}
+}
+
+.button{
+	margin-top: 25px;
+}
