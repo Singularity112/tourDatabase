@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { InlineSVGModule } from 'ng-inline-svg';
@@ -12,8 +13,8 @@ import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
 import { AddTouristComponent } from './add-tourist/add-tourist.component';
 import { TouristsComponent } from './tourists/tourists.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
 
 
 @NgModule({
@@ -28,14 +29,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     InlineSVGModule.forRoot({baseUrl: '/assets/'}),
-    BrowserAnimationsModule
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
-  providers: [],
+  providers: [{provide: OWL_DATE_TIME_LOCALE, useValue: 'Ru'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

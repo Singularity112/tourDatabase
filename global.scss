@@ -1,4 +1,5 @@
 @import 'variables.scss';
+@import 'picker.min.css';
 
 body{
 	padding: 0;
@@ -7,6 +8,14 @@ body{
 	font-size: $text-regular;
 	font-weight: $font-regular;
 	background-color: $gray-thin;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected{
+	background-color: $blue !important;
+}
+.fullWidth{
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .font-light{

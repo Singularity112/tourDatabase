@@ -5,9 +5,6 @@ import { UploadService } from  '../upload.service';
 import { BackendApiService } from '../backend-api.service';
 
 
-
-
-
 @Component({
   selector: 'app-add-tourist',
   templateUrl: './add-tourist.component.html',
