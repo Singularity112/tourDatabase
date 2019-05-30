@@ -1,31 +1,12 @@
 <div class = "pageContainer">
 	<div class="page-title">
 		<div class="page-title-text">
-			Добавить туриста
+			Список туристов
 		</div>
 		<div class="page-title-desc">
-			Заполните поля
+			Сначала последние
 		</div>
 	</div>
 
-	<div class="tourists-grid">
-		<div class="tourist-item flex-col" *ngFor = "let item of tourists">
-			<div class="tourist-item-image">
-				<img src="{{item.image}}" [hidden]="item.image.length < 1">
-				<img src="/assets/common/defaultUser.png" [hidden]="item.image.length > 0">
-				{{item.image.length}}
-			</div>
-			<div class="tourist-item-name">
-				{{item.name}}
-			</div>
-			<div class="tourist-item-desc">
-				{{item.phone}}
-			</div>
-			<div class="tourist-item-button">
-				<div class="button-default button-cancel">
-					Посмотреть профиль
-				</div>
-			</div>
-		</div>
-	</div>
+	<app-tourist-template [tourists] = "tourists"></app-tourist-template>
 </div>

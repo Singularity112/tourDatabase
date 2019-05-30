@@ -24,8 +24,6 @@ export class LoginComponent {
 
   onLoginClick() {
 
-  	console.log(this.login);
-
   	this.currentUser = window.localStorage.getItem('user');
     this.currentUser = JSON.parse(this.currentUser);
 

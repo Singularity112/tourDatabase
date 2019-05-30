@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { BackendApiService } from '../backend-api.service';
-import { Tourist } from '../tourist'
+import { BackendApiService } from '../services/backend-api.service';
+import { TouristService, Tourist } from '../services/tourist.service';
+import { TouristTemplateComponent } from '../tourist-template/tourist-template.component';
+
+
 
 @Component({
   selector: 'app-tourists',
   templateUrl: './tourists.component.html',
-  styleUrls: ['./tourists.component.scss']
+  styleUrls: ['./tourists.component.scss'],
+  providers: [TouristService]
 })
 export class TouristsComponent implements OnInit {
 
   tourists: Tourist[];
-  constructor(private apiService: BackendApiService) { }
+  constructor(private apiService: BackendApiService, private touristService: TouristService) { }
 
   ngOnInit() {
-  	this.apiService.getTourists().then(tourists => {
-      this.tourists = tourists;
+    this.touristService.getTourists().subscribe((res: Tourist[]) => {
+      this.tourists = res.reverse();
     });
   }
 

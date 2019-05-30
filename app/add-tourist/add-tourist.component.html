@@ -24,6 +24,21 @@
 			<input type="email" placeholder="Email" [(ngModel)]="tourist.email">
 		</div>
 
+		<div class="flex-row input-row row social-row">
+			<div class = "social-item">
+				<input type="text" placeholder="Viber" [(ngModel)]="tourist.viber">
+				<div class="social-icon" [inlineSVG]="'img-social/viber.svg'"></div>
+			</div>
+			<div class="social-item">
+				<input type="text" placeholder="Instagram" [(ngModel)]="tourist.instagram">
+				<div class="social-icon" [inlineSVG]="'img-social/instagram.svg'"></div>
+			</div>
+			<div class="social-item">
+				<input type="text" placeholder="VK" [(ngModel)]="tourist.vk">
+				<div class="social-icon" [inlineSVG]="'img-social/vk.svg'"></div>
+			</div>	
+		</div>
+
 		<div class="flex-row input-row row">
 			<textarea rows = "7" placeholder="Заметка" [(ngModel)]="tourist.hint"></textarea>
 		</div>

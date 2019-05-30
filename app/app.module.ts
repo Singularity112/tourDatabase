@@ -15,6 +15,9 @@ import { AddTouristComponent } from './add-tourist/add-tourist.component';
 import { TouristsComponent } from './tourists/tourists.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
+import { TouristTemplateComponent } from './tourist-template/tourist-template.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
     SearchComponent,
     LoginComponent,
     AddTouristComponent,
-    TouristsComponent
+    TouristsComponent,
+    TouristTemplateComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

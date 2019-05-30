@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BackendApiService } from '../backend-api.service';
-import { User } from '../users';
+import { BackendApiService, User } from '../services/backend-api.service';
 
 
 @Component({
@@ -17,7 +16,7 @@ export class OnepageComponent {
   constructor(private apiService: BackendApiService) { }
 
   ngOnInit() {
-     this.apiService.getCurrentUser().then( user => {
+     this.apiService.getCurrentUser().subscribe((user: User) => {
        this.username = user.name;
      });
   }

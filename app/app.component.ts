@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { BackendApiService } from './backend-api.service';
-import { User } from './users';
+import { BackendApiService, User } from './services/backend-api.service';
  
 @Component({
   selector: 'app-root',
@@ -18,8 +17,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.apiService.getCurrentUser().then( user => {
-     this.isLogined = user.isLogined;
-   });
+   this.apiService.isLogined().subscribe((res: boolean) => {
+       this.isLogined = res;
+     });
   }
 }

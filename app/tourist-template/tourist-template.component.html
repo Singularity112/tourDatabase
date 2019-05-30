@@ -1,0 +1,40 @@
+<div class="tourists-grid">
+	<div class="tourist-item flex-col" *ngFor = "let item of tourists">
+		<div class="tourist-item-image">
+			<img src="{{item.image}}" [hidden]="item.image.length < 1">
+			<img src="/assets/common/defaultUser.png" [hidden]="item.image.length > 0">
+			{{item.image.length}}
+		</div>
+		<div class="tourist-item-name">
+			{{item.name}}
+		</div>
+		<div class="tourist-item-desc">
+			{{item.phone}}
+		</div>
+		<div class = "tourist-item-socials-row">
+			<div class="tourist-social-item" [hidden]="item.vk.length < 1">
+				<a href="{{item.vk}}" target="_blank">
+					<div class = "tourist-social-icon-cont" [inlineSVG]="'img-social/vk.svg'"></div>
+				</a>
+			</div>
+
+			<div class="tourist-social-item" [hidden]="item.viber.length < 1">
+				<a href="viber://chat?number={{item.viber}}" target="_blank">
+					<div class = "tourist-social-icon-cont" [inlineSVG]="'img-social/viber.svg'"></div>
+				</a>
+			</div>
+
+			<div class="tourist-social-item" [hidden]="item.instagram.length < 1">
+				<a href="{{item.instagram}}" target="_blank">
+					<div class = "tourist-social-icon-cont" [inlineSVG]="'img-social/instagram.svg'"></div>
+				</a>
+			</div>
+
+		</div>
+		<div class="tourist-item-button">
+			<a style = "display: block;" routerLink = "/profile/{{item.id}}" class="button-default button-cancel">
+				Посмотреть профиль
+			</a>
+		</div>
+	</div>
+</div>

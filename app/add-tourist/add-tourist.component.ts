@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from  '@angular/forms';
-import { UploadService } from  '../upload.service';
-import { BackendApiService } from '../backend-api.service';
+import { UploadService } from  '../services/upload.service';
+import { BackendApiService, User } from '../services/backend-api.service';
+import { TouristService, Tourist } from '../services/tourist.service';
 
 
 @Component({
@@ -29,7 +30,10 @@ export class AddTouristComponent implements OnInit {
   'addedBy' : -1
   }
 
-  constructor(private formBuilder: FormBuilder, private uploadService: UploadService, private apiService: BackendApiService) { }
+  constructor(private formBuilder: FormBuilder,
+   private uploadService: UploadService,
+   private apiService: BackendApiService, 
+   private touristService: TouristService) { }
 
    onFileSelect(event) {
     if (event.target.files.length > 0) {
@@ -46,9 +50,9 @@ export class AddTouristComponent implements OnInit {
   }
 
   submitForm() {
-    this.apiService.getCurrentUser().then(user => {
+    let user = this.apiService.getCurrentUser().subscribe((user: User) => {
       this.tourist.addedBy = user.id;
-      this.apiService.addTourist(this.tourist).subscribe((policy: any)=>{
+      this.touristService.addTourist(this.tourist).subscribe((policy: any)=> {
          // if complete;
        });
       this.clearForm();

@@ -5,6 +5,8 @@ import { SearchComponent }   from './search/search.component';
 import { LoginComponent } from './login/login.component';
 import { AddTouristComponent } from './add-tourist/add-tourist.component';
 import { TouristsComponent } from './tourists/tourists.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 const routes: Routes = [
@@ -12,7 +14,8 @@ const routes: Routes = [
 	{ path: 'dashboard', component: DashboardComponent },
 	{ path: 'search', component: SearchComponent },
 	{ path: 'add', component: AddTouristComponent},
-	{ path: 'tourists', component: TouristsComponent}
+	{ path: 'tourists', component: TouristsComponent},
+	{ path: 'profile/:id', component:ProfileComponent }
 ];
 
 @NgModule({

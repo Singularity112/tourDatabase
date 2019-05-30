@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BackendApiService } from '../backend-api.service';
-import { Tourist } from '../tourist'
+import { TouristService, Tourist } from '../services/tourist.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,10 +10,10 @@ export class DashboardComponent implements OnInit {
   
   tourists: Tourist[];
 
-  constructor(private apiService: BackendApiService) { }
+  constructor(private touristService: TouristService) { }
 
   ngOnInit() {
-  	this.apiService.getTourists().then(tourists => {
+  	this.touristService.getTourists().subscribe(tourists => {
      this.tourists = tourists;
    });
   }
