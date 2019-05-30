@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router"
-
-
 
 @Component({
   selector: 'app-login',
@@ -10,34 +7,20 @@ import {Router} from "@angular/router"
 })
 export class LoginComponent {
 
-  currentUser: any;
+  constructor() { }
+
   login: string;
   password: string;
 
-  onKeyPassword(event: any) {
-  	this.password = event.target.value;
-  }
-
-  onKeyLogin(event: any) {
-  	this.login = event.target.value;
-  }
-
   onLoginClick() {
-
-  	this.currentUser = window.localStorage.getItem('user');
-    this.currentUser = JSON.parse(this.currentUser);
 
     const user = {
     	"login" : this.login,
     	"password" : this.password
     };
 
-
-	console.log(user);
-	window.localStorage.setItem('user', JSON.stringify(user));
-	window.location.href = "/";
+	  window.localStorage.setItem('user', JSON.stringify(user));
+    window.location.reload();
   }  
-
-  constructor(private router: Router) { }
 
 }

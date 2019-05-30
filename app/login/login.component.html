@@ -1,8 +1,8 @@
 <div class = "login-container">
 	<div class="form flex-col">
-		<input type="" name="" placeholder="Логин"(keyup)="onKeyLogin($event)">
+		<input type="" name="" placeholder="Логин"  [(ngModel)]="login" >
 		<br>
-		<input type="" name="" placeholder="Пароль" type = "password" (keyup)="onKeyPassword($event)">
+		<input type="" name="" placeholder="Пароль" type = "password" [(ngModel)]="password">
 		<div class="button" (click) = "onLoginClick()">
 			Войти
 		</div>
