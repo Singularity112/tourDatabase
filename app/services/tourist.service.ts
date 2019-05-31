@@ -20,8 +20,8 @@ export class TouristService {
 
   }
 
-  getTourist(id) : Observable<any> {
-    return this.httpClient.post<any>(`${GlobalVariable.PHP_API_SERVER}/getTourist.php`, id)
+  getTourist(id) : Observable<Tourist> {
+    return this.httpClient.post<Tourist>(`${GlobalVariable.PHP_API_SERVER}/getTourist.php`, id)
     .pipe( (tourist) => {
       return tourist;
     });
