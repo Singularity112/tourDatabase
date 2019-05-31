@@ -1,7 +1,7 @@
 <div class = "profile-content">
 	<div class="profile-picture-container">
 		<div class="profile-picture">
-			<img src="">
+			<img src="{{tourist.image ? tourist.image : '/assets/common/defaultUser.png'}}">
 		</div>
 		<div class="profile-name">
 			Test
@@ -9,19 +9,19 @@
 		<div class="profile-socials">
 			<div class = "tourist-item-socials-row">
 				<div class="tourist-social-item" [hidden]="false">
-					<a href="" target="_blank">
+					<a href="{{tourist.vk}}" target="_blank">
 						<div class = "tourist-social-icon-cont" [inlineSVG]="'img-social/vk.svg'"></div>
 					</a>
 				</div>
 
 				<div class="tourist-social-item" [hidden]="false">
-					<a href="viber://chat?number=" target="_blank">
+					<a href="viber://chat?number={{tourist.viber}}" target="_blank">
 						<div class = "tourist-social-icon-cont" [inlineSVG]="'img-social/viber.svg'"></div>
 					</a>
 				</div>
 
 				<div class="tourist-social-item" [hidden]="false">
-					<a href="" target="_blank">
+					<a href="{{tourist.instagram}}" target="_blank">
 						<div class = "tourist-social-icon-cont" [inlineSVG]="'img-social/instagram.svg'"></div>
 					</a>
 				</div>

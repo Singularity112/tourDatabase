@@ -17,11 +17,9 @@ export class BackendApiService {
   	let usersArray = [];
   	let bufferedUser;
 
-  	let userData = this.httpClient.get<User[]>(`${GlobalVariable.PHP_API_SERVER}/getUserData.php`).pipe(map((users) => {
-  		return users;
-  	}));
-
-  	return userData;
+  	return this.httpClient.get<User[]>(`${GlobalVariable.PHP_API_SERVER}/getUserData.php`).pipe((users) => {
+      return users;
+    });
   }
 
   isLogined(): Observable<boolean> {
