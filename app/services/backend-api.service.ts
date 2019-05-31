@@ -37,10 +37,10 @@ export class BackendApiService {
   constructor(private httpClient: HttpClient) { }
 }
 
-export  class  User {
-    public id: number = -1;
-    public login:  string = '';
-    public password: string = '';
-    public name: string = '';
-    public isLogined: boolean = false;
+export interface User {
+    id: number;
+    login:  string;
+    password: string;
+    name: string;
+    isLogined: boolean;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { TouristService, Tourist } from '../services/tourist.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+   tourist: Tourist;
+
+  constructor(private route: ActivatedRoute, private touristService: TouristService ) {
+  	let id = parseInt(this.route.snapshot.paramMap.get("id"));
+
+  	this.touristService.getTourist(id).subscribe(tourist => {
+     this.tourist = tourist;
+     console.log(this.tourist);
+   });
+  }
 
   ngOnInit() {
+
   }
 
 }

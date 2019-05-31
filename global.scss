@@ -312,7 +312,7 @@ a{
 	.social-icon{
 		position: absolute;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateY(-50%) scale(1);
 		right: 10px;
 		pointer-events: none;
 
@@ -380,4 +380,18 @@ a{
 			}
 		}
 	}
+}
+
+.social-item input{
+
+	& ~ .social-icon{
+		transition-duration: 0.2s;
+	}
+
+	&:focus{
+		& ~ .social-icon{
+			transform: translateY(-50%) scale(1.1);
+		}
+	}
+
 }

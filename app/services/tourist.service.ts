@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from  'rxjs';
 import { GlobalVariable } from '../global';
 import { map, tap } from 'rxjs/operators';
@@ -13,14 +13,18 @@ export class TouristService {
   constructor(private httpClient: HttpClient) { }
 
    getTourists() : Observable<Tourist[]> {
-  	let touristArray = [];
-  	let touristsData = this.httpClient.get<Tourist[]>(`${GlobalVariable.PHP_API_SERVER}/getTourists.php`)
-  	.pipe(map((tourists) => {
-  		touristArray = tourists;
-  		return touristArray;
-  	}));
+  	return this.httpClient.get<Tourist[]>(`${GlobalVariable.PHP_API_SERVER}/getTourists.php`)
+  	.pipe( (tourists) => {
+      return tourists;
+    });
 
-  	return touristsData;
+  }
+
+  getTourist(id) : Observable<any> {
+    return this.httpClient.post<any>(`${GlobalVariable.PHP_API_SERVER}/getTourist.php`, id)
+    .pipe( (tourist) => {
+      return tourist;
+    });
   }
 
   addTourist(user): Observable<any>{
@@ -28,7 +32,7 @@ export class TouristService {
   }
 }
 
-export class Tourist {
+export interface Tourist {
 	id: number;
     name:  string; 
     surname: string;

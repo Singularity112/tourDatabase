@@ -48,13 +48,13 @@
 
 		  <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-		  <div class="avatar-upload flex-col ai-center jc-center" (click) = "simulateUpload()">
+		  <div class="avatar-upload flex-col ai-center jc-center" (click) = "avatarInput.click();">
 		  	<div class="upload-icon" [inlineSVG]="'common/upload.svg'"></div>
 		  	<div class="upload-text">
 		  		Фото. Перетащите файл сюда, либо кликните для загрузки
 		  	</div>
 		  </div>
-    		<input id ="avatar-input" [hidden] = "true" type="file" name="avatar" (change)="onFileSelect($event)" />
+    		<input id ="avatar-input" #avatarInput [hidden] = "true" type="file" name="avatar" (change)="onFileSelect($event)" />
    		 	<button type="submit" [hidden] = "true" id = "uploadAvatar">Upload</button>
 
   		</form>

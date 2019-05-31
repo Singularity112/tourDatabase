@@ -44,11 +44,6 @@ export class AddTouristComponent implements OnInit {
     }
   }
 
-  simulateUpload() {
-  	const input = document.getElementById('avatar-input');
-  	input.click();
-  }
-
   submitForm() {
     let user = this.apiService.getCurrentUser().subscribe((user: User) => {
       this.tourist.addedBy = user.id;

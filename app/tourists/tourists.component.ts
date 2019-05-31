@@ -14,12 +14,17 @@ import { TouristTemplateComponent } from '../tourist-template/tourist-template.c
 export class TouristsComponent implements OnInit {
 
   tourists: Tourist[];
-  constructor(private apiService: BackendApiService, private touristService: TouristService) { }
+  
+  constructor(private apiService: BackendApiService, private touristService: TouristService) {
 
-  ngOnInit() {
     this.touristService.getTourists().subscribe((res: Tourist[]) => {
       this.tourists = res.reverse();
     });
+
+  }
+
+  ngOnInit() {
+
   }
 
 }
